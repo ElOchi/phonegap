@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Blank App</title>
+</head>
+
+<body>
+  <div data-role="page"id="page1">
+    <div data-role="header">
+      <h1>UI Sample</h1>
+    </div><!-- header -->
+      <div data-role="main" class="ui-content" >
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="false">
+              <h3>collapsible one</h3>
+              <p>This is a collapsible data area. Put your content here.</p>
+            </div><!-- collapsible -->
+            <div data-role="collapsible" >
+              <h3>collapsible two</h3>
+              <p>This is a collapsible data area. Put your content here.</p>
+            </div><!-- collapsible -->
+        </div><!-- collapsible-set -->
+
+        <label for="myFlip" >Flip Switch:</label>
+        <input type="checkbox"id="myFlip" data-role="flipswitch"/>
+
+        <button onclick="location.href='index.html#page2'" >Press Me!</button>
+      </div><!-- main -->
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer</h2>
+      </div><!-- footer -->
+  </div>  <!-- page -->
+
+
+                                    <!-- PAGE 2 -->
+
+  <div data-role="page"id="page2">
+    <div data-role="header">
+      <h1>UI Sample page 2</h1>
+    </div><!-- header -->
+      <div data-role="main" class="ui-content" >
+        <fieldset data-role="controlgroup" data-mini="true">
+          <legend>Bands:</legend>
+          <input type="checkbox" name="Rush" id="Rush">
+          <label for="Rush">Rush</label>
+          <input type="checkbox" name="Reo" id="Reo">
+          <label for="Reo">Reo Speedwagon</label>
+          <input type="checkbox" name="Lez" id="Lez">
+          <label for="Lez">Lez Zepellin</label>
+          <input type="checkbox" name="Doors" id="Doors">
+          <label for="Doors">The Doors</label>
+        </fieldset><!-- controlgroup -->
+        <button onclick="location.href='index.html#page1'" >Press Me!</button>
+      </div><!-- main -->
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer</h2>
+      </div><!-- footer -->
+  </div>  <!-- page -->
+
+
+
+  <script type="text/javascript" src="cordova.js"></script>
+</body>
+
+</html>
