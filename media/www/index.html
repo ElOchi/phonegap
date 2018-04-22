@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Media</title>
+  <script>
+    var player;
+    var intv;
+    window.onload = function() {
+      player = document.getElementById("myMusic");
+      document.getElementById("btnPlay").addEventListener("click", function() {
+        player.play();
+        document.getElementById("outDuration").innerHTML = Math.round(player.duration) + " seconds";
+        intv = setInterval(displayTime, 500);
+      });
+      document.getElementById("btnPause").addEventListener("click", function() {
+        player.pause();
+      });
+      document.getElementById("btnStop").addEventListener("click", function() {
+        player.pause();
+        player.currentTime = 0;
+      });
+
+      $("#rngVolume").on("slidestop", function() {
+        var volume = document.getElementById("rngVolume").value;
+        console.log(volume);
+        player.volume = volume;
+      });
+
+      function displayTime(e) {
+        document.getElementById("outPosition").innerHTML = Math.round(player.currentTime);
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <audio id="myMusic">
+    <source src="media/demo_1.mp3"/>
+  </audio>
+  <button id="btnPlay">Play</button>
+  <button id="btnPause">Pause</button>
+  <button id="btnStop">Stop</button>
+  <output id="outPosition"></output>/<input type="range" id="rngVolume" min="0" max="1" step=".01" value=".5">
+  <output id="outDuration"></output>
+
+  <video controls="controls">
+    <source src="media/bunny.mp4">
+  </video>
+
+  <script type="text/javascript" src="cordova.js"></script>
+</body>
+
+</html>
